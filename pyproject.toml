@@ -7,6 +7,7 @@ authors = ["gabriel04alves <gabriel52.alves@gmail.com>"]
 [tool.poetry.dependencies]
 python = "^3.9"
 Django = "^4.1"
+djangorestframework = "^3.13.1"
 
 [tool.poetry.dev-dependencies]
 autopep8 = "^1.7.0"
