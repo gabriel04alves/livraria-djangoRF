@@ -1,7 +1,4 @@
-from .autor import Autor
-
-from .categoria import Categoria
-
-from .editora import Editora
-
-from .livro import Livro
+from .autor import AutorViewSet
+from .categoria import CategoriaViewSet
+from .editora import EditoraViewSet
+from .livro import LivroViewSet
