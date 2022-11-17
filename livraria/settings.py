@@ -1,4 +1,5 @@
 import os
+import environ
 
 """
 Django settings for livraria project.
@@ -21,13 +22,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-xbm2yt!aec$o^21fms0+159*=$%eylip-n9s#lbkjui$fi_sec'
+env = environ.Env()
+environ.Env.read_env((os.path.join(BASE_DIR, '.env')))
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ["*"]
+SECRET_KEY = env('SECRET_KEY')
+DEBUG = env('DEBUG')
+ALLOWED_HOSTS = env('ALLOWED_HOSTS').split(',')
+DATABASES = {'default': env.db()}
 
 
 # Application definition
